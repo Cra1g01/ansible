@@ -11,4 +11,6 @@
         - core
   tasks:
     - include: tasks/core.yml
+    - include: tasks/node.yml
     - include: tasks/nvim.yml
+    - include: tasks/zsh.yml
