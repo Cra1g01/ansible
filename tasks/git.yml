@@ -14,3 +14,35 @@
   tags:
     - git
 
+- name: Git setup editor
+  git_config:
+    name: core.editor
+    scope: global
+    value: "vim"
+  tags:
+    - git
+
+- name: Git setup commit signing format
+  git_config:
+    name: gpg.format
+    scope: global
+    value: "ssh"
+  tags:
+    - git
+
+- name: Git setup commit signing key
+  git_config:
+    name: user.signingKey
+    scope: global
+    value: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519.pub"
+  tags:
+    - git
+
+- name: Git setup commit signing auto
+  git_config:
+    name: commit.gpgsign
+    scope: global
+    value: "true"
+  tags:
+    - git
+
