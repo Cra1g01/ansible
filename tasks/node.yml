@@ -6,25 +6,19 @@
     - install
     - node
 
-- name: npmjs prefix
+- name: Create npm global dir
   shell: mkdir -p ~/.local/.npm-global
   tags:
     - install
     - node
 
-- name: Add npmjs to path
-  shell: PATH=~/.local/.npm-global/bin:$PATH
+- name: Configure npm global dir
+  shell: npm config set prefix "~/.local/.npm-global"
   tags:
     - install
     - node
 
-- name: npmjs global settings
-  shell: npm config set prefix '~/.local/.npm-global'
-  tags:
-    - install
-    - node
-
-- name: npmjs global settings export PATH
+- name: Export npm global dir PATH
   shell: export PATH=~/.local/.npm-global/bin:$PATH
   tags:
     - install
@@ -40,7 +34,7 @@
     - node
 
 - name: Install Node 18
-  shell: n 18
+  shell: ~/.local/.npm-global/bin/n 18
   tags:
     - install
     - node
