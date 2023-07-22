@@ -2,14 +2,15 @@
   git_config:
     name: user.email
     scope: global
-    value: "craig@ianlyn.co.uk"
+    value: "58040967+Cra1g01@users.noreply.github.com"
   tags:
-  - git
+    - git
 
 - name: Git setup name
   git_config:
     name: user.name
     scope: global
-    value: "Craig Wightman"
+    value: "Craig"
   tags:
-  - git
+    - git
+
