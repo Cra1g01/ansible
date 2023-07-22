@@ -5,27 +5,9 @@
   tags:
     - install
     - node
-
-- name: Create npm global dir
-  shell: mkdir -p ~/.local/.npm-global
-  tags:
-    - install
-    - node
-
-- name: Configure npm global dir
-  shell: npm config set prefix "~/.local/.npm-global"
-  tags:
-    - install
-    - node
-
-- name: Export npm global dir PATH
-  shell: export PATH=~/.local/.npm-global/bin:$PATH
-  tags:
-    - install
-    - node
-    - npm-path
-
+  
 - name: Install N
+  become: true
   npm:
     name: n
     global: yes
@@ -34,7 +16,8 @@
     - node
 
 - name: Install Node 18
-  shell: ~/.local/.npm-global/bin/n 18
+  become: true
+  shell: n 18
   tags:
     - install
     - node
