@@ -1,23 +1,11 @@
-- name: Install Node and npm
-  become: true
-  apt:
-    name: ["nodejs", "npm"]
-  tags:
-    - install
-    - node
-  
-- name: Install N
-  become: true
-  npm:
-    name: n
-    global: yes
+- name: Download and install fnm
+  shell: curl -o- https://fnm.vercel.app/install | bash
   tags:
     - install
     - node
 
-- name: Install Node 18
-  become: true
-  shell: n 18
+- name: Install Node 22
+  shell: fnm install 22
   tags:
     - install
     - node
