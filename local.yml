@@ -21,4 +21,3 @@
     - include_tasks: tasks/nvim.yml
     - include_tasks: tasks/zsh.yml
     - include_tasks: tasks/tools.yml
-    - include_tasks: tasks/git.yml
